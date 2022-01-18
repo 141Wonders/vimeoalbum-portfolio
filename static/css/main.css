@@ -1,0 +1,229 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
+@font-face {
+  font-family:  'Kiona';
+  src:  url('/static/fonts/Kiona-Bold.woff2') format('woff2');
+}
+
+/* DOC SETTINGS */
+body{
+	-ms-overflow-style: scrollbar;
+    background: linear-gradient(45deg,#000000, #36138a, #000000);
+    background-size: 175% 175%;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient{
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }  
+}
+
+a:link{
+  color: white;
+}
+a:visited{
+  color: white;
+}
+
+/* HEADERS */
+h1{
+	font-family: 'Bungee';
+  font-size:  2rem;
+	text-shadow:
+   	-2px -2px 0 #212529,  
+    4px -2px 0 #212529,
+    -2px 2px 0 #212529,
+    2px 2px 0 #212529;
+}
+
+h2 {
+  font-family: 'Kiona';
+  font-weight: normal;
+  font-style: normal;
+  font-size:  2em;
+  opacity: 0;
+  color: #36138a;
+  text-shadow:
+    -1px -1px 0 #36138a,  
+    1px -1px 0 #36138a,
+    -1px 1px 0 #36138a,
+    1px 1px 0 #36138a;
+}
+
+h2 span {
+  /* translate effect */
+  position: relative;
+  top: 10px;
+  left: 10px;
+  /* fade effect */
+  opacity: 0;
+}
+
+h4{
+  font-family: 'Bungee Outline';
+  font-size:  3rem;
+  opacity:  0;
+}
+
+h4 span {
+  /* translate effect */
+  position: relative;
+  top: 10px;
+  left: 10px;
+  /* fade effect */
+  opacity: 0;
+}
+
+p{
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.figure-img{
+  border:solid #231a3a;
+}
+
+figure{
+    border-color: transparent;
+    background-color: transparent;
+    position: relative;
+}
+
+figure:hover {
+  transform: scale(1.1);
+}
+
+#email-link:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+#email-link:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+#email-link:hover {
+  color: silver;
+  background-color: transparent;
+  text-decoration: underline;
+}
+#email-link:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/*Navbar properties */
+.navbar {
+  background-color: #13170a;
+}
+.nav-link{
+  font-family: 'Bungee';
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: slategray;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: "white";
+}
+
+footer{
+  background-color: #13170a;
+}
+
+/*Hero sections*/
+#section-hero{
+	background-image: url("/static/images/landing_bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	min-height: 80vh;
+}
+
+#section-hero2{
+  background-image: url("/static/images/hero_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 80vh;
+}
+
+/* gallery item title */
+.title-text {
+	text-shadow:
+   	-1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+	position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+}
+ /* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 80px;
+  right: 45px;
+  font-size: 80px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+} 

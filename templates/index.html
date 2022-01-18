@@ -1,0 +1,68 @@
+{%extends "base.html" %}
+
+{%block title%}Derek Henriquez{%endblock title%}
+
+{%block content%}
+<!-- BIO SECTION -->
+
+<!-- <div class="container-fluid d-md-flex d-none align-items-center justify-content-center" id="section-hero">
+	<div class="col-6">
+		<div class="text center">
+			<h4 class="spotlight-text">END OF EVANGELION</h4>
+		</div>
+		<div style="padding:56.25% 0 0 0;position:relative;">
+			<iframe class="border border-light border-2" src="https://player.vimeo.com/video/342608415?h=12027b0997&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen;" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="The End of Evangelion - Fan Trailer"></iframe>
+		</div>
+	</div>
+
+	<div class="col-1 offset-md-2">
+		<div class="">
+			<a class="bio_link">
+				<figure class="figure" id="portrait-img">
+					<img class="figure-img img-fluid border border-dark border-3" src="{{  url_for('static', filename='images/portrait.png') }}" alt="portrait image">
+				</figure>
+			</a>
+		</div>
+	</div>
+</div> -->
+
+
+<!-- GALLERY HEADER -->
+<div id="section-work" class="text-light text-center row mx-auto">
+		<div class='col mt-4'>
+			<h1>REEL</h1>
+		</div>
+</div>
+
+ <!-- NAV OVERLAY FOR VIDEO PLAYER -->
+<div id="myNav" class="overlay">
+
+	<!-- BUTTON TO CLOSE NAV OVERLAY -->
+	<a href="javascript:void(0)" class="closebtn">&times;</a>
+
+	<!-- NAV OVERLAY-CONTENT DIVS -->
+	<div class="d-flex justify-content-center overlay-content" id="Vimeo_Player">
+	</div>
+</div>
+
+<!-- GALLERY GRID -->
+<div id="section-gallery">
+	<div class="container mt-4">
+		  <div class="row row-cols-3">
+		  	<!-- LOOP BEGINS WITH 3 COLUMNS PER ROW -->
+		  	{% for result in main_result %}
+		  	<div class="col-12 col-md-6 col-xl-4 video-btn" data-src="{{ result.link }}">
+				<figure class="figure text-center">
+					<!-- THUMBNAIL -->
+					<img class="figure-img img-fluid rounded-3" src="{{thumbnail_list[loop.index0]}}" alt="Portfolio Item Heading">
+					<!-- NAME OF VIDEO -->
+					<div class="fw-bolder text-light title-text">
+						<p>{{ result.name }}</p>
+					</div>
+				</figure>
+			</div>
+			{% endfor %}
+		  </div>
+	</div>
+</div>
+{%endblock content%}
