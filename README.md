@@ -2,18 +2,25 @@
 Retrieve vimeo album video data 
 
 ## Get started
-Input Vimeo API keys & album ID
+Input Vimeo API keys
+You must first register app on Vimeo following this guide [HERE](https://developer.vimeo.com/api/guides/start)
+Enter key syntax in main.py here:
+
 ```
-from flask import Flask, render_template
-import vimeo, json
-app = Flask(__name__)
+client = vimeo.VimeoClient(
+	#API key SYNTAX GOES HERE
+)
 
-#API key SYNTAX GOES HERE
+```
 
-def decode_json(client):
+## Getting album data
+You can specify a certain video album(or showcase) using the album ID in a get request or as an argument below:
+
+'''
+def get_album_data(client, id):
 	# Make the request to the server for the "/me" endpoint.
-	#album ID REQUIRED
-	about_me = client.get('/me/albums/{album ID goes here}/videos', params={"fields": "name,link,pictures.sizes.link"})
-```
+	about_me = client.get('/me/albums/'+ id +'/videos?sort=manual', params={"fields": "name,link,pictures.sizes.link"})
+
+'''
 
 ## [View App](https://derekhenriquez-editor.com/)

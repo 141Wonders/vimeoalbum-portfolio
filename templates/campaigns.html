@@ -1,0 +1,43 @@
+{%extends "base.html" %}
+
+{%block title%}Campaigns{%endblock title%}
+
+{%block content%}
+
+<!-- GALLERY HEADER -->
+<div id="section-work" class="text-light text-center row mx-auto">
+		<div class='col mt-4'>
+			<h1>Campaigns</h1>
+		</div>
+</div>
+
+ <!-- NAV OVERLAY FOR VIDEO PLAYER -->
+<div id="myNav" class="overlay">
+
+	<!-- BUTTON TO CLOSE NAV OVERLAY -->
+	<a href="javascript:void(0)" class="closebtn">&times;</a>
+
+	<!-- NAV OVERLAY-CONTENT DIVS -->
+	<div class="d-flex justify-content-center overlay-content" id="Vimeo_Player">
+	</div>
+</div>
+
+<!-- GALLERY GRID -->
+<div id="section-gallery">
+	<div class="container mt-4">
+		  <div class="row row-cols-2">
+		  	<!-- LOOP BEGINS WITH 2 COLUMNS PER ROW -->
+		  	{% for result in album_result %}
+		  	<div class="col-12 col-md-6">
+				<figure class="figure text-center">
+						<a href="{{ result.re_direct }}">
+							<!-- THUMBNAIL -->
+							<img class="figure-img img-fluid rounded-3" src="{{album_thumbnail_list[loop.index0]}}" alt="Portfolio Item Heading">
+						</a>
+				</figure>
+			</div>
+			{% endfor %}
+		  </div>
+	</div>
+</div>
+{%endblock content%}

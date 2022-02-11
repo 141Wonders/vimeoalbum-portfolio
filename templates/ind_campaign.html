@@ -1,0 +1,45 @@
+{%extends "base.html" %}
+
+{%block title%}Campaigns:{campaign}{%endblock title%}
+
+{%block content%}
+
+<!-- GALLERY HEADER -->
+<div id="section-work" class=" text-center row mx-auto">
+		<div class='col mt-4'>
+			<a role="button" class="btn btn-light text-dark" href="{{ url_for('campaigns') }}"><h5>Back to Campaigns</h5></a>
+		</div>
+</div>
+
+ <!-- NAV OVERLAY FOR VIDEO PLAYER -->
+<div id="myNav" class="overlay">
+
+	<!-- BUTTON TO CLOSE NAV OVERLAY -->
+	<a href="javascript:void(0)" class="closebtn">&times;</a>
+
+	<!-- NAV OVERLAY-CONTENT DIVS -->
+	<div class="d-flex justify-content-center overlay-content" id="Vimeo_Player">
+	</div>
+</div>
+
+<!-- GALLERY GRID -->
+<div id="section-gallery">
+	<div class="container mt-4">
+		  <div class="row row-cols-3">
+		  	<!-- LOOP BEGINS WITH 3 COLUMNS PER ROW -->
+		  	{% for result in pass_result %}
+		  	<div class="col-12 col-md-6 col-xl-4 video-btn" data-src="{{ result.link }}">
+				<figure class="figure text-center">
+					<!-- THUMBNAIL -->
+					<img class="figure-img img-fluid rounded-3" src="{{pass_thumbnail[loop.index0]}}" alt="Portfolio Item Heading">
+					<!-- NAME OF VIDEO -->
+					<div class="fw-bolder text-light title-text">
+						<p>{{ result.name }}</p>
+					</div>
+				</figure>
+			</div>
+			{% endfor %}
+		  </div>
+	</div>
+</div>
+{%endblock content%}

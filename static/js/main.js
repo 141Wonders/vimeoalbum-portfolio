@@ -5,6 +5,7 @@ var $videoSrc;
 $(document).ready(function() {
   console.log("ready!");
 
+  // Name Logo animation
   $('.logo-text').textyle({
     callback : function(){
       $(this).css({
@@ -13,34 +14,33 @@ $(document).ready(function() {
       });
     }
   });
-
-  $(".figure").css("cursor", "pointer");
-  /* hover function for thumbnail elements */
-  // $(".figure").hover(function(){
-  //   $(this).stop().animate({
-  //     "width" : "=+50"
-  //   })
-  // }, function(){
-  //   $(this).stop().animate({
-  //         "width" : "=-50"
-  //       })
-  // });
-
-  $(".figure-img").on('mouseenter', function(){
-    $(this).next().stop().animate({
-      fontSize: "1.15em",
-      opacity: "0.9"
-    },"slow");
-
-    // $(this).stop().fadeTo(500, 1);
+  // About Page animations
+  $('.bio-summary').hide();
+  $('.bio-pic').css("cursor", "pointer").click(function(){
+    $('.bio-summary').stop().slideToggle(2000).click(function(){
+      $(this).stop().slideToggle(1000);
+    });
   });
 
+  // Gallery mouse events:
+  $(".figure").css("cursor", "pointer");
+  $(".figure-img").next().fadeTo(1,0.1);
+  
+  // hover over
+  $(".figure-img").on('mouseenter', function(){
+    $(this).next().stop().animate({
+      fontSize: "1.2em",
+      opacity: "1.0"
+    },"slow");
+    $(this).css("box-shadow", "0px 0px 8px #000");
+  });
+  // hover off
   $(".figure-img").on('mouseleave', function(){
-    $(this).next().stop().fadeTo(500,0.2).animate({
+    $(this).next().stop().animate({
       fontSize: "1.1em",
-      opacity: "0.2"
+      opacity: "0.1"
     },"fast");
-    // $(this).stop().fadeTo(500, 1);
+    $(this).css("box-shadow", "0px 0px 0px #ddd");
   });
 
   /* Close buttton for nav overlay, will unload and destroy player */

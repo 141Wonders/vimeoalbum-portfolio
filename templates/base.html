@@ -10,7 +10,7 @@
 		<link rel="shortcut icon" type="image/jpg" href="{{  url_for('static', filename='images/logo_favi.png') }}"/>
 	</head>
 
-	<body>
+	<body class="d-flex flex-column min-vh-100">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
 			<div class="container">
@@ -29,10 +29,10 @@
 							<a class="nav-link" href="{{ url_for('landing') }}">REEL</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled" href="{{ url_for('landing') }}">CAMPAIGNS</a>
+							<a class="nav-link" href="{{ url_for('campaigns') }}">CAMPAIGNS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled" href="{{ url_for('landing') }}">ABOUT</a>
+							<a class="nav-link" href="{{ url_for('bio') }}">ABOUT</a>
 						</li>
 					</ul>
 				</div>
@@ -50,7 +50,7 @@
 		{%block content %}{%endblock content%}
 
 		<!-- FOOTER -->
-		<footer class="py-1">
+		<footer class="mt-auto py-1">
 			<div class="container">
 				<p class="text-center text-white mb-0">&copy; Derek Henriquez 2022. All Rights Reserved. <a href="https://webworldwonders.com/">WWW Design</a></p>
 			</div>
